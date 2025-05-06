@@ -68,11 +68,26 @@
   </ul>
 
   <div class="cta">
-    <a href="https://app.leadextractor.it" target="_blank">Accedi all'app</a>
+    <p>🔁 Verrai reindirizzato all'app in pochi secondi...</p>
+    <div id="progress" style="width: 100%; background: #eee; border-radius: 10px; height: 20px; margin-top: 10px;">
+      <div id="bar" style="height: 100%; width: 0%; background: #4CAF50; border-radius: 10px;"></div>
+    </div>
   </div>
 
   <footer>
     © 2025 Lead Extractor · <a href="mailto:info@leadextractor.it">info@leadextractor.it</a>
   </footer>
+
+  <script>
+    let width = 0;
+    const bar = document.getElementById("bar");
+    const interval = setInterval(() => {
+      width += 2;
+      bar.style.width = width + "%";
+      if (width >= 100) {
+        clearInterval(interval);
+        window.location.href = "https://app.leadextractor.it";
+      }
+    }, 50);
+  </script>
 </body>
-</html>
