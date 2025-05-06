@@ -28,7 +28,7 @@
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
+      background: #f4f6f8;
       color: #333;
     }
 
@@ -39,51 +39,49 @@
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
       padding: 40px;
+      text-align: center;
     }
 
     h1 {
       color: #2c3e50;
       font-size: 2.4rem;
-      text-align: center;
       margin-bottom: 20px;
     }
 
     p {
       font-size: 1.1rem;
-      text-align: center;
     }
 
     ul {
-      margin: 30px auto;
-      max-width: 500px;
+      list-style: none;
+      padding-left: 0;
       font-size: 1.05rem;
       line-height: 1.6;
     }
 
-    .cta {
-      text-align: center;
-      margin-top: 40px;
+    ul li::before {
+      content: "✅ ";
+      margin-right: 8px;
     }
 
     .progress-container {
       width: 100%;
-      background: #e0e0e0;
-      border-radius: 20px;
-      overflow: hidden;
-      height: 20px;
-      margin-top: 10px;
+      background: #ddd;
+      border-radius: 10px;
+      height: 16px;
+      margin: 20px auto;
     }
 
     .progress-bar {
       height: 100%;
       width: 0%;
       background: #4CAF50;
-      transition: width 0.2s ease-in-out;
+      border-radius: 10px;
+      transition: width 0.2s ease;
     }
 
     footer {
-      margin-top: 60px;
-      text-align: center;
+      margin-top: 40px;
       font-size: 0.9em;
       color: #777;
     }
@@ -98,7 +96,6 @@
     }
   </style>
 </head>
-
 <body>
   <div class="container">
     <h1>Lead Extractor per Google Maps</h1>
@@ -108,16 +105,15 @@
     </p>
 
     <ul>
-      <li>✅ Fino a 50 ricerche al mese</li>
-      <li>✅ Fino a 250 contatti per ricerca</li>
-      <li>✅ Download CSV e storico ricerche</li>
+      <li>Fino a 50 ricerche al mese</li>
+      <li>Fino a 250 contatti per ricerca</li>
+      <li>Download CSV e storico ricerche</li>
     </ul>
 
-    <div class="cta">
-      <p>🔁 Verrai reindirizzato all'app in pochi secondi...</p>
-      <div class="progress-container">
-        <div class="progress-bar" id="bar"></div>
-      </div>
+    <p>🔁 Verrai reindirizzato all'app in pochi secondi...</p>
+
+    <div class="progress-container">
+      <div class="progress-bar" id="bar"></div>
     </div>
 
     <footer>
@@ -133,7 +129,7 @@
       bar.style.width = width + "%";
       if (width >= 100) {
         clearInterval(interval);
-        window.location.href = "https://web-production-75c3.up.railway.app"; // Redirect corretto
+        window.location.href = "https://app.leadextractor.it";
       }
     }, 50);
   </script>
