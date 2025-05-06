@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lead Extractor - Estrai contatti da Google Maps</title>
   <meta name="description" content="Trova contatti di aziende su Google Maps in modo semplice e veloce. Ideale per agenti, marketer e imprese.">
   <meta name="keywords" content="lead extractor, estrazione contatti, Google Maps, email aziende, telefono aziende">
@@ -20,74 +20,122 @@
   }
   </script>
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://www.svgrepo.com/show/509077/map-search.svg" />
+
   <style>
     body {
-      font-family: sans-serif;
-      line-height: 1.6;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
     }
+
+    .container {
+      max-width: 800px;
+      margin: 60px auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+      padding: 40px;
+    }
+
     h1 {
       color: #2c3e50;
-      font-size: 2rem;
+      font-size: 2.4rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1rem;
       text-align: center;
     }
+
+    ul {
+      margin: 30px auto;
+      max-width: 500px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
     .cta {
       text-align: center;
       margin-top: 40px;
     }
-    .cta a {
-      background: #4CAF50;
-      color: white;
-      padding: 12px 24px;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
+
+    .progress-container {
+      width: 100%;
+      background: #e0e0e0;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 20px;
+      margin-top: 10px;
     }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: #4CAF50;
+      transition: width 0.2s ease-in-out;
+    }
+
     footer {
       margin-top: 60px;
-      font-size: 0.9em;
-      color: #555;
       text-align: center;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    footer a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
+
 <body>
-  <h1>Lead Extractor per Google Maps</h1>
+  <div class="container">
+    <h1>Lead Extractor per Google Maps</h1>
+    <p>
+      Estrai facilmente email, numeri di telefono e siti web da attività commerciali su Google Maps.<br>
+      Ideale per agenti di commercio, professionisti del marketing e aziende in cerca di nuovi contatti.
+    </p>
 
-  <p>
-    Estrai facilmente email, numeri di telefono e siti web da attività commerciali su Google Maps.
-    Ideale per agenti di commercio, professionisti del marketing e aziende in cerca di nuovi contatti.
-  </p>
+    <ul>
+      <li>✅ Fino a 50 ricerche al mese</li>
+      <li>✅ Fino a 250 contatti per ricerca</li>
+      <li>✅ Download CSV e storico ricerche</li>
+    </ul>
 
-  <ul>
-    <li>✅ Fino a 50 ricerche al mese</li>
-    <li>✅ Fino a 250 contatti per ricerca</li>
-    <li>✅ Download CSV e storico ricerche</li>
-  </ul>
-
-  <div class="cta">
-    <p>🔁 Verrai reindirizzato all'app in pochi secondi...</p>
-    <div id="progress" style="width: 100%; background: #eee; border-radius: 10px; height: 20px; margin-top: 10px;">
-      <div id="bar" style="height: 100%; width: 0%; background: #4CAF50; border-radius: 10px;"></div>
+    <div class="cta">
+      <p>🔁 Verrai reindirizzato all'app in pochi secondi...</p>
+      <div class="progress-container">
+        <div class="progress-bar" id="bar"></div>
+      </div>
     </div>
-  </div>
 
-  <footer>
-    © 2025 Lead Extractor · <a href="mailto:info@leadextractor.it">info@leadextractor.it</a>
-  </footer>
+    <footer>
+      © 2025 Lead Extractor · <a href="mailto:info@leadextractor.it">info@leadextractor.it</a>
+    </footer>
+  </div>
 
   <script>
     let width = 0;
     const bar = document.getElementById("bar");
     const interval = setInterval(() => {
-      width += 2;
+      width += 1.5;
       bar.style.width = width + "%";
       if (width >= 100) {
         clearInterval(interval);
-        window.location.href = "https://app.leadextractor.it";
+        window.location.href = "https://www.leadextractor.it"; // Redirect corretto
       }
     }, 50);
   </script>
 </body>
+</html>
